@@ -1,0 +1,85 @@
+Repository: ScoreKeeper
+Generated: 2026-03-03
+
+Source: MainActivity.java
+
+package com.example.andorid.scorekeeper;
+
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    /**
+     * Left side variable
+     */
+
+    TextView textViewL;
+    AlertDialog dialogL;
+    EditText editTextL;
+
+    TextView textViewR;
+    AlertDialog dialogR;
+    EditText editTextR;
+
+
+
+
+    /**
+     * Left side- These are variables for the plus button
+     */
+    int quantityF = 0;
+    int quantityO = 0;
+    int quantityD = 0;
+    int quantityE = 0;
+    int quantityB = 0;
+
+    int quantityFR = 0;
+    int quantityOR = 0;
+    int quantityDR = 0;
+    int quantityER = 0;
+    int quantityBR = 0;
+
+
+
+    /**
+     * This method automatically shows up when the app is opened
+     */
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        /**BBOY/CREW
+         * Left side of the app
+         */
+
+        textViewL = (TextView) findViewById(R.id.left_side);
+        dialogL = new AlertDialog.Builder(this).create();
+        editTextL = new EditText(this);
+
+        dialogL.setTitle("Name");
+        dialogL.setView(editTextL);
+        dialogL.setButton(DialogInterface.BUTTON_POSITIVE, "Save Name", new DialogInterface.OnClickListener() {
+
+            /**
+             * Left side- This method is used for editing the text view
+             */
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                textViewL.setText(editTextL.getText());
+            }
+        });
+
+        textViewL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editTextL.setText(textViewL.getText());
+                dialogL.show();
+            }
+        });
+
