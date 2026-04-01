@@ -2,6 +2,9 @@
 
 # Scorekeeper
 
+![Demo](demo.gif)
+
+
 ![Java](https://img.shields.io/badge/Java-007396?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Active-green?style=flat-square)
 
